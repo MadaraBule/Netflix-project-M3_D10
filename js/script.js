@@ -27,16 +27,17 @@ const handleSubmit = async event => {
     })
     console.log(response)
 };
-let moviess = await.response.json();
+let moviess = response.json();
 console.log(moviess);
 
-let row = document.querySelector('/index.html/tbody/putHere');
+let row = document.querySelector('index.html/tbody/putHere');
 
 let col = document.createElement('div');
 col.className = "col-12 col-md-4 mb-5 image-fluid";
 col.innerHTML = `<div class="card">
           <img src=${moviess.imageUrl} class="card-img-top" height="300" alt="..." />
           <div class="card-body">
+        </div>
         </div>`;
 
 row.appendChild(col);
