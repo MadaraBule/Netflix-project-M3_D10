@@ -71,3 +71,7 @@ const putmovies = async () => {
         } catch (err) {
             alert(err)
         }
+    } catch (err) {
+        alert(err)
+    }
+}
