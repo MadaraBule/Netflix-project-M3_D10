@@ -1,14 +1,4 @@
-const params = new URLSearchParams(location.search)
-const id = params.get("id")
-const movies = {
-    method: "GET",
-    headers: {
-        method: 'PUT',
-        body: JSON.stringify(),
-        "Content-Type": "application/json",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU2YmU1Y2E5MDIzOTAwMTVkOTY1ZDIiLCJpYXQiOjE2NTAyNjQ3NzQsImV4cCI6MTY1MTQ3NDM3NH0.KBcELRW-ntNpcDf0tRuqpIpFhAceyHT_CCZ1KQa9Kjo"
-    }
-};
+
 window.onload = () => {
     fetch(
         "https://striveschool-api.herokuapp.com/api/movies/",
@@ -37,23 +27,16 @@ const handleSubmit = async event => {
     })
     console.log(response)
 };
-.then let moviess = await.response.json();
+let moviess = await.response.json();
 console.log(moviess);
 
-let row = document.querySelector('/index.putHere');
+let row = document.querySelector('/index.html/tbody/putHere');
 
 let col = document.createElement('div');
 col.className = "col-12 col-md-4 mb-5 image-fluid";
 col.innerHTML = `<div class="card">
           <img src=${moviess.imageUrl} class="card-img-top" height="300" alt="..." />
           <div class="card-body">
-            <h5 class="card-title">${moviess.name}</h5>
-            <p class="card-text">
-              ${movies.description}
-            </p>
-            <a href="#" class="btn btn-primary">${moviess.category} €</a>
-            <a href="./backoffice.html?productID=${moviess._id}" class="btn btn-dark float-right">EDIT</a>
-          </div>
         </div>`;
 
 row.appendChild(col);
@@ -62,3 +45,14 @@ try {
 } catch (error) {
     console.log(error);
 }
+const params = new URLSearchParams(location.search)
+const id = params.get("id")
+const movies = {
+    method: "GET",
+    headers: {
+        method: 'PUT',
+        body: JSON.stringify(),
+        "Content-Type": "application/json",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU2YmU1Y2E5MDIzOTAwMTVkOTY1ZDIiLCJpYXQiOjE2NTAyNjQ3NzQsImV4cCI6MTY1MTQ3NDM3NH0.KBcELRW-ntNpcDf0tRuqpIpFhAceyHT_CCZ1KQa9Kjo"
+    }
+};
