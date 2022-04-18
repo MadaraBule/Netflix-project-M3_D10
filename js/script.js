@@ -19,3 +19,27 @@ window.onload = () => {
             console.log(data);
         });
 };
+const handleSubmit = async event => {
+    event.preventDefault()
+
+    const myEvent = {
+        name: document.getElementById('name').value,
+        description: document.getElementById('description').value,
+        categorey: document.getElementById('category').value,
+        image: document.getElementById('image').value
+    }
+    const response = await fetch(`https://striveschool-api.herokuapp.com/api/movies/123`, {
+        method: 'POST',
+        body: JSON.stringify(myEvent),
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+    console.log(response)
+};
+let moviess = await response.json();
+console.log(moviess);
+
+let row = document.querySelector('/index.putHere');
+
+let col = document.createElement('div');
