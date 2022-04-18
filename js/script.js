@@ -25,7 +25,7 @@ const handleSubmit = async event => {
     const myEvent = {
         name: document.getElementById('name').value,
         description: document.getElementById('description').value,
-        categorey: document.getElementById('category').value,
+        category: document.getElementById('category').value,
         image: document.getElementById('image').value
     }
     const response = await fetch(`https://striveschool-api.herokuapp.com/api/movies/123`, {
@@ -37,9 +37,28 @@ const handleSubmit = async event => {
     })
     console.log(response)
 };
-let moviess = await response.json();
+.then let moviess = await.response.json();
 console.log(moviess);
 
 let row = document.querySelector('/index.putHere');
 
 let col = document.createElement('div');
+col.className = "col-12 col-md-4 mb-5 image-fluid";
+col.innerHTML = `<div class="card">
+          <img src=${moviess.imageUrl} class="card-img-top" height="300" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">${moviess.name}</h5>
+            <p class="card-text">
+              ${movies.description}
+            </p>
+            <a href="#" class="btn btn-primary">${moviess.category} €</a>
+            <a href="./backoffice.html?productID=${moviess._id}" class="btn btn-dark float-right">EDIT</a>
+          </div>
+        </div>`;
+
+row.appendChild(col);
+try {
+
+} catch (error) {
+    console.log(error);
+}
